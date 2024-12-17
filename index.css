@@ -17,11 +17,22 @@ body {
   height: 600px;
   background-color: black;
   position: relative;
-  color: #fff;
-  gap: 1px;
-  border: 2px solid #fff;
-  
 }
+
+#background {
+  grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(20, 30px);
+  
+  width: 30px;
+  height: 30px;
+  border: 2px;
+  gap: 1px;
+  background-color: #333;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  display: grid;
+}
+
 .cell {
   width: 30px;
   height: 30px;
@@ -107,9 +118,5 @@ body {
   height: 558px;
   padding: 20px;
 }
-.cell {
-  width: 30px;
-  height: 30px;
-  background-color: #444;
-}
+
 

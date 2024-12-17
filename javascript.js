@@ -15,6 +15,9 @@
       [
         [-1, 1],
         [0, 1],
+
+
+        
         [1, 1],
         [0, 0], //T helber
       ],
@@ -588,8 +591,7 @@
   const btn = document.querySelector("#start");
   btn.addEventListener("click", function () {
     btn.style.display = "none";
-    document.getElementById("audio").play(); 
-
+    document.getElementById("audio").play();
     if (!isStart) {
       tetris.init();
     }
