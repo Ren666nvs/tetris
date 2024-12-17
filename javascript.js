@@ -1,13 +1,12 @@
 (function () {
-  
   var isStart = false;
   var tetris = {
     board: [],
     boardDiv: null,
     canvas: null,
     pSize: 20,
-    canvasHeight: 440,
-    canvasWidth: 200,
+    canvasHeight: 600,
+    canvasWidth: 400,
     boardHeight: 0,
     boardWidth: 0,
     spawnX: 4,
@@ -315,11 +314,13 @@
         this.incLevel();
       }
     },
+
     gameOver: function () {
       this.clearTimers();
       isStart = false;
       this.canvas.innerHTML = "<h1>GAME OVER</h1>";
     },
+
     play: function () {
       var me = this;
       if (this.timer === null) {
@@ -344,6 +345,7 @@
       this.pTimer = setTimeout(gameLoop, me.speed);
       this.isActive = 1;
     },
+
     togglePause: function () {
       if (this.isActive === 1) {
         this.clearTimers();
@@ -586,6 +588,8 @@
   const btn = document.querySelector("#start");
   btn.addEventListener("click", function () {
     btn.style.display = "none";
+    document.getElementById("audio").play(); 
+
     if (!isStart) {
       tetris.init();
     }
@@ -611,14 +615,12 @@ if (!Array.prototype.remDup) {
       }
       if (bool === true) {
         temp.push(this[i]);
-        
       }
     }
     const grid = document.querySelector(".grid");
-        const gridWidth = 10;
-        const gridHeight = 20;
-   
+    const gridWidth = 10;
+    const gridHeight = 20;
+
     return temp;
   };
-  
 }

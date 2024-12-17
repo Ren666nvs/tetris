@@ -1,25 +1,38 @@
 body {
-  overflow: hidden;
-  background: #d7d7d7;
+  background: linear-gradient(0deg, #6139a5 0%, #4570df 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 #tetris {
-  width: 360px;
+  width: 720px;
   border: 1px solid black;
-  padding: 20px;
+  padding: 40px;
 }
 #canvas {
-  width: 200px;
-  height: 440px;
-  background-color: #000;
+  width: 400px;
+  height: 600px;
+  background-color: black;
   position: relative;
   color: #fff;
+  gap: 1px;
+  border: 2px solid #fff;
+  
+}
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #444;
 }
 #canvas h1 {
   margin: 0;
   padding: 0;
   text-align: center;
   font-size: 30px;
-  padding-top: 200px;
+  padding-top: 400px;
 }
 .piece {
   border: 1px solid white;
@@ -34,7 +47,14 @@ body {
   cursor: pointer;
   font-size: 28px;
 }
-
+#restartBtn {
+  animation: blink 0.7s steps(2, start) infinite;
+  background: #e1ff5f;
+  border-radius: 2px;
+  color: #202020;
+  cursor: pointer;
+  font-size: 28px;
+}
 @keyframes blink {
   to {
     outline: #e1ff5f solid 1px;
@@ -76,25 +96,20 @@ body {
   position: relative;
   background-color: #000;
   border: 1px solid white;
-  width: 110px;
-  height: 110px;
+  width: 220px;
+  height: 220px;
 }
 #info {
   background-color: #000;
   color: #fff;
   float: right;
-  width: 110px;
-  height: 420px;
-  padding: 10px;
+  width: 220px;
+  height: 558px;
+  padding: 20px;
 }
-.game-container {
-  background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.2) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-  background-size: 30px 30px; /* Нэг нүдний хэмжээ */
-  border: 3px solid #e0b24c; /* Алтан хүрээ */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #444;
 }
+
