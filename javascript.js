@@ -5,9 +5,9 @@
     boardDiv: null,
     canvas: null,
     pSize: 20,
-    canvasHeight: 600,
+    canvasHeight: 500,
     canvasWidth: 400,
-    boardHeight: 0,
+    boardHeight: 5,
     boardWidth: 0,
     spawnX: 4,
     spawnY: 1,
@@ -312,6 +312,7 @@
       /*if (speed > 0){ score += speed * this["level" +this .level[3]];}*/
       this.incScore(score);
     },
+  
     checkScore: function () {
       if (this.score >= this["level" + this.level][0]) {
         this.incLevel();
@@ -322,6 +323,7 @@
       this.clearTimers();
       isStart = false;
       this.canvas.innerHTML = "<h1>GAME OVER</h1>";
+       color = red
     },
 
     play: function () {
