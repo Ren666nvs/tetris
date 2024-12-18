@@ -626,5 +626,39 @@ if (!Array.prototype.remDup) {
     const gridHeight = 20;
 
     return temp;
-  };
+  }
 }
+function restart() {
+  // Интервал зогсоох
+  clearInterval(gameInterval);
+
+  // Талбарыг цэвэрлэх
+  board.forEach(row => row.forEach(cell => {
+    cell.className = "cell";
+    cell.index.cssText = "";
+  }));
+
+  // Оноо, түвшин, хурд дахин тохируулах
+  score = 0;
+  level = 1;
+  speed = 400;
+
+  document.getElementById("score").textContent = score;
+  document.getElementById("level").textContent = level;
+
+  // Хадгалсан хэлбэрийг цэвэрлэх
+  holdShape = null;
+  canHold = true;
+  holdContainer.innerHTML = "";
+
+  // Дараагийн хэлбэрийг дахин үүсгэх
+  refillBag();
+  currentShape = getRandomShape();
+  nextShape = getRandomShape();
+  drawNextShape();
+
+  // Тоглоом эхлүүлэх
+  setSpeed(speed);
+  drawShape();
+}
+
